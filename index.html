@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#292546">
+  <meta name="description" content="Conheça as aulas de patinação inline da instrutora Linda Ro.">
+  <title>Linda Ro — Patinação inline</title>
+  <link rel="stylesheet" href="estilo.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topo">
+    <a class="marca" href="#inicio" aria-label="Linda Ro, início">
+      <span class="marca-simbolo" aria-hidden="true">LR</span>
+      <span>LINDA <strong>RO</strong></span>
+    </a>
+    <nav aria-label="Navegação principal">
+      <a href="#aulas">Aulas</a>
+      <a href="#sobre">Sobre</a>
+      <a class="link-destaque" href="#experimental">Aula experimental <span aria-hidden="true">↗</span></a>
+    </nav>
+    <button id="alternar-tema" class="botao-tema" type="button" aria-pressed="false">Modo noturno</button>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-texto">
+        <p class="etiqueta"><span class="ponto" aria-hidden="true"></span> INSTRUTORA DE PATINAÇÃO INLINE</p>
+        <h1>Patine no<br>seu <span>ritmo.</span></h1>
+        <p class="hero-descricao">Do primeiro passo ao rolê com confiança: aprenda a patinar no seu tempo, com leveza e segurança.</p>
+        <div class="hero-acoes">
+          <a class="botao botao-coral" href="#experimental">Quero começar <span aria-hidden="true">→</span></a>
+          <a class="link-mais" href="#aulas">Conheça as aulas <span aria-hidden="true">↓</span></a>
+        </div>
+        <p class="assinatura">Aulas com Linda Ro <span aria-hidden="true">✳</span></p>
+      </div>
+      <div class="hero-arte" role="img" aria-label="Ilustração de um patins inline com formas coloridas">
+        <div class="orb orb-grande"></div>
+        <div class="orb orb-pequeno"></div>
+        <span class="arte-estrela estrela-um" aria-hidden="true">✳</span>
+        <span class="arte-estrela estrela-dois" aria-hidden="true">✦</span>
+        <div class="trilha trilha-um"></div>
+        <div class="trilha trilha-dois"></div>
+        <svg class="patins" viewBox="0 0 240 190" aria-hidden="true">
+          <path d="M75 26h58l8 63 42 13c17 5 27 16 31 30H56c-17 0-24-14-18-29l34-12z" fill="#fffdf8" stroke="#302d50" stroke-width="7" stroke-linejoin="round"/>
+          <path d="M79 51h51M80 66h53" fill="none" stroke="#ff755d" stroke-width="7" stroke-linecap="round"/>
+          <path d="M62 139h143" fill="none" stroke="#d3ef75" stroke-width="11" stroke-linecap="round"/>
+          <circle cx="82" cy="161" r="13" fill="#fffdf8" stroke="#302d50" stroke-width="6"/>
+          <circle cx="125" cy="161" r="13" fill="#fffdf8" stroke="#302d50" stroke-width="6"/>
+          <circle cx="169" cy="161" r="13" fill="#fffdf8" stroke="#302d50" stroke-width="6"/>
+        </svg>
+        <span class="arte-legenda">DESLIZE DO SEU JEITO</span>
+      </div>
+      <span class="hero-indice" aria-hidden="true">01 — MOVIMENTO</span>
+    </section>
+
+    <section class="secao aulas" id="aulas">
+      <div class="cabecalho-secao">
+        <div>
+          <p class="etiqueta etiqueta-escura">CADA ROLÊ COMEÇA DE ALGUM LUGAR</p>
+          <h2>Uma aula para<br>cada fase.</h2>
+        </div>
+        <p class="texto-secao">Sem pressa e sem comparação. Escolha um ponto de partida e vamos evoluindo juntas, uma volta de cada vez.</p>
+      </div>
+      <div id="lista-aulas" class="lista-aulas" aria-live="polite"></div>
+    </section>
+
+    <section class="faixa" id="sobre">
+      <div class="faixa-simbolo" aria-hidden="true">✳</div>
+      <div>
+        <p class="etiqueta">MAIS QUE UMA HABILIDADE, UMA SENSAÇÃO</p>
+        <h2>Confiança se constrói<br>em movimento.</h2>
+      </div>
+      <p class="faixa-texto">Sou Linda Ro, instrutora de patinação inline. Meu foco é criar um espaço acolhedor para você aprender, praticar e curtir cada conquista sobre rodas.</p>
+    </section>
+
+    <section class="secao experimental" id="experimental">
+      <div class="experimental-intro">
+        <p class="etiqueta etiqueta-escura">SUA PRIMEIRA VOLTA</p>
+        <h2>Vamos marcar<br>uma experimental?</h2>
+        <p>Me conte seu nome e escolha a aula que combina com você. A gente começa por aí.</p>
+        <div class="dica">
+          <span aria-hidden="true">✦</span>
+          <p><strong>Dica de iniciante</strong><br>Capacete e proteções fazem parte do rolê. Segurança primeiro, diversão sempre.</p>
+        </div>
+      </div>
+      <form id="form-aula" class="form-aula" novalidate>
+        <p class="form-titulo">Escolha seu próximo passo</p>
+        <label for="nome">Como você se chama?</label>
+        <input id="nome" name="nome" type="text" autocomplete="given-name" maxlength="50" placeholder="Seu nome" required>
+
+        <label for="aula">Qual aula procura?</label>
+        <select id="aula" name="aula" required>
+          <option value="">Selecione uma opção</option>
+        </select>
+
+        <button class="botao botao-roxo" type="submit">Quero fazer uma aula <span aria-hidden="true">↗</span></button>
+        <p id="mensagem" class="mensagem" role="status" aria-live="polite"></p>
+        <p class="nota-privacidade">Projeto demonstrativo: o pedido fica salvo somente neste navegador e não é enviado.</p>
+        <div id="ultimo-pedido" class="ultimo-pedido" aria-live="polite"></div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <a class="marca marca-rodape" href="#inicio">
+      <span class="marca-simbolo" aria-hidden="true">LR</span>
+      <span>LINDA <strong>RO</strong></span>
+    </a>
+    <p>Aprenda. Deslize. Repita. <span aria-hidden="true">✳</span></p>
+    <a href="#inicio">Voltar ao topo ↑</a>
+  </footer>
+</body>
+</html>
